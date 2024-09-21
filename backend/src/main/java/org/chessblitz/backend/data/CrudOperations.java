@@ -26,7 +26,7 @@ public class CrudOperations {
             if (rs.next()) {
                 rs.close();
                 con.close();
-                return new ResponseJson("User verified!", true, 200);re
+                return new ResponseJson("User verified!", true, 200);
             } else {
                 rs.close();
                 con.close();
