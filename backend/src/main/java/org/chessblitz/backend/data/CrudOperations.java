@@ -1,9 +1,13 @@
 package org.chessblitz.backend.data;
 
+import org.chessblitz.backend.configs.DatabaseConfig;
 import org.chessblitz.backend.models.ResponseJson;
 import org.chessblitz.backend.models.User;
+import org.springframework.beans.ConfigurablePropertyAccessor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
@@ -15,20 +19,14 @@ public class CrudOperations {
     @PostMapping("/verifyUser")
     public ResponseJson verifyUser(@RequestBody User user) throws IOException, SQLException {
         try {
-            Properties prop = new Properties();
-            prop.load(new FileInputStream("src/main/resources/application.properties"));
-            String username = prop.getProperty("user");
-            String password = prop.getProperty("password");
-            String connectionString = prop.getProperty("connectionString");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:sqlserver://" + connectionString + "user=" + username + ";password=" + password + ";encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+            Connection con = DatabaseConfig.databaseConfiguration();
             String sql = "SELECT * FROM USERS WHERE username ='" + user.getUsername() + "' AND pass ='" + user.getPassword() + "'";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                 rs.close();
                 con.close();
-                return new ResponseJson("User verified!", true, 200);
+                return new ResponseJson("User verified!", true, 200);re
             } else {
                 rs.close();
                 con.close();
@@ -41,20 +39,15 @@ public class CrudOperations {
     @GetMapping("/getUser/{name}")
     public ResponseJson giveUser(@PathVariable String name) throws IOException, SQLException {
         try {
-            Properties prop = new Properties();
-            prop.load(new FileInputStream("src/main/resources/application.properties"));
-            String username = prop.getProperty("user");
-            String password = prop.getProperty("password");
-            String connectionString = prop.getProperty("connectionString");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:sqlserver://" + connectionString + "user=" + username + ";password=" + password + ";encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+            Connection con = DatabaseConfig.databaseConfiguration();
             String sql = "SELECT * FROM USERS WHERE username ='" + name + "'";
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                 rs.close();
                 con.close();
-                return new ResponseJson("Login successful!", true, 200);
+                ResponseJson response = new ResponseJson("User found!", true, 200);
+                return response;
             } else {
                 rs.close();
                 con.close();
@@ -68,16 +61,9 @@ public class CrudOperations {
     @PostMapping("/insertUser")
     public ResponseJson insertUser(@RequestBody User user) throws IOException {
         try {
-            Properties prop = new Properties();
-            prop.load(new FileInputStream("src/main/resources/application.properties"));
-            String username = prop.getProperty("user");
-            String password = prop.getProperty("password");
-            String connectionString = prop.getProperty("connectionString");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:sqlserver://" + connectionString + "user=" + username + ";password=" + password + ";encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+            Connection con = DatabaseConfig.databaseConfiguration();
             String sql = "INSERT INTO USERS (id, email, username, pass) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
-
 
             ps.setString(1, user.getId());
             ps.setString(2, user.getEmail());
