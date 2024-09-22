@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Chessboard } from "react-chessboard";
 import { Chess }  from "chess.js";
 import { enPassant } from "../Functions/EnPassant.js";
-import "../Styles/Chessboard.css";
 
 export default function Chessboard2() {
   const [game, setGame] = useState();
@@ -31,15 +31,13 @@ export default function Chessboard2() {
   
 
   function promotion(piece,sourceSquare,targetSquare) {
-    
     game.move({ from : sourceSquare, to : targetSquare, promotion : piece[1].toLowerCase() });
-
     const newPosition = { ...position };
-    delete newPosition[sourceSquare]; // Remove piece from source square
-    newPosition[targetSquare] = piece; // Place piece on target square
+    delete newPosition[sourceSquare]; 
+    newPosition[targetSquare] = piece; 
 
-    setPosition(newPosition); // Update board position
-    setIsWhiteTurn(!isWhiteTurn); // Switch turns
+    setPosition(newPosition); 
+    setIsWhiteTurn(!isWhiteTurn); 
 
     return true;
   }
@@ -52,18 +50,18 @@ export default function Chessboard2() {
     const piece = position[sourceSquare];
     if (!piece) {
     return false;
-    } // No piece to move
+    } 
 
-    // Check if it's the correct turn for the piece color
+    
     const isWhitePiece = piece.startsWith('w');
     if (isWhiteTurn && !isWhitePiece) { 
     alert("It's white's turn, but the piece is black");
-    return false; // It's white's turn, but the piece is black
+    return false; 
     }
     if (!isWhiteTurn && isWhitePiece) {
       alert("It's black turn, but the piece is white");
       return false;
-    }// It's black's turn, but the piece is white
+    }
 
     try { 
       game.move({ from : sourceSquare, to : targetSquare });
@@ -105,83 +103,82 @@ export default function Chessboard2() {
       setIsBlackCastleQueen(false);
     }
 
-    if (sourceSquare === 'e1' && targetSquare === 'g1') { // White King-side castling
+    if (sourceSquare === 'e1' && targetSquare === 'g1') { 
       if (!isWhiteCastleKing) {
         alert('Castling on the white king side is no longer allowed');
         return false;
       }
     
-      // Perform the king-side castling for white
+      
       const newPosition = { ...position };
-      delete newPosition['e1']; // Remove the king from e1
-      newPosition['g1'] = 'wK'; // Place the king on g1
-      delete newPosition['h1']; // Remove the rook from h1
-      newPosition['f1'] = 'wR'; // Place the rook on f1
+      delete newPosition['e1']; 
+      newPosition['g1'] = 'wK'; 
+      delete newPosition['h1']; 
+      newPosition['f1'] = 'wR'; 
     
       setPosition(newPosition);
       setIsWhiteCastleKing(false);
       setIsWhiteCastleQueen(false);
-      setIsWhiteTurn(false); // Change turn to black
+      setIsWhiteTurn(false); 
       return true;
     }
 
-    if (sourceSquare === 'e1' && targetSquare === 'c1') { // White Queen-side castling
+    if (sourceSquare === 'e1' && targetSquare === 'c1') { 
       if (!isWhiteCastleQueen) {
         alert('Castling on the white queen side is no longer allowed');
         return false;
       }
 
-      // Perform the queen-side castling for white
+      
       const newPosition = { ...position };
-      delete newPosition['e1']; // Remove the king from e1
-      newPosition['c1'] = 'wK'; // Place the king on c1
-      delete newPosition['a1']; // Remove the rook from a1
-      newPosition['d1'] = 'wR'; // Place the rook on d1
+      delete newPosition['e1']; 
+      newPosition['c1'] = 'wK'; 
+      delete newPosition['a1']; 
+      newPosition['d1'] = 'wR';
 
       setPosition(newPosition);
       setIsWhiteCastleKing(false);
       setIsWhiteCastleQueen(false);
-      setIsWhiteTurn(false); // Change turn to black
+      setIsWhiteTurn(false); 
       return true;
     }
 
-    if (sourceSquare === 'e8' && targetSquare === 'g8') { // Black King-side castling
+    if (sourceSquare === 'e8' && targetSquare === 'g8') { 
       if (!isBlackCastleKing) {
         alert('Castling on the black king side is no longer allowed');
         return false;
       }
 
-      // Perform the king-side castling for black
       const newPosition = { ...position };
-      delete newPosition['e8']; // Remove the king from e8
-      newPosition['g8'] = 'bK'; // Place the king on g8
-      delete newPosition['h8']; // Remove the rook from h8
-      newPosition['f8'] = 'bR'; // Place the rook on f8
+      delete newPosition['e8'];
+      newPosition['g8'] = 'bK'; 
+      delete newPosition['h8']; 
+      newPosition['f8'] = 'bR'; 
 
       setPosition(newPosition);
       setIsBlackCastleKing(false);
       setIsBlackCastleQueen(false);
-      setIsWhiteTurn(true); // Change turn to white
+      setIsWhiteTurn(true); 
       return true;
     }
 
-    if(sourceSquare === 'e8' && targetSquare === 'c8') { // Black Queen-side castling
+    if(sourceSquare === 'e8' && targetSquare === 'c8') { 
       if (!isBlackCastleQueen) {
         alert('Castling on the black queen side is no longer allowed');
         return false;
       }
 
-      // Perform the queen-side castling for black
+      
       const newPosition = { ...position };
-      delete newPosition['e8']; // Remove the king from e8
-      newPosition['c8'] = 'bK'; // Place the king on c8
-      delete newPosition['a8']; // Remove the rook from a8
-      newPosition['d8'] = 'bR'; // Place the rook on d8
+      delete newPosition['e8'];
+      newPosition['c8'] = 'bK';
+      delete newPosition['a8']; 
+      newPosition['d8'] = 'bR'; 
 
       setPosition(newPosition);
       setIsBlackCastleKing(false);
       setIsBlackCastleQueen(false);
-      setIsWhiteTurn(true); // Change turn to white
+      setIsWhiteTurn(true); 
       return true;
     }
 
@@ -190,12 +187,12 @@ export default function Chessboard2() {
     if(passantSquare !== false)
     {
         const newPosition = { ...position };
-        delete newPosition[sourceSquare]; // Remove piece from source square
-        newPosition[targetSquare] = piece; // Place piece on target square
-        delete newPosition[passantSquare]; // Remove the captured piece
+        delete newPosition[sourceSquare]; 
+        newPosition[targetSquare] = piece; 
+        delete newPosition[passantSquare]; 
 
-        setPosition(newPosition); // Update board position
-        setIsWhiteTurn(!isWhiteTurn); // Switch turns
+        setPosition(newPosition);
+        setIsWhiteTurn(!isWhiteTurn); 
 
         console.log(`Piece ${piece} moved from ${sourceSquare} to ${targetSquare}`);
         return true;
@@ -205,23 +202,21 @@ export default function Chessboard2() {
 
     if (game.isCheckmate()) {
       alert(isWhiteTurn ? "Black wins by checkmate!" : "White wins by checkmate!");
-      // You can optionally reset the game or take other actions here
-      return true; // End the function since the game is over
+      
+      return true; 
     }
 
     if(game.isDraw()) {
       alert("The game is a draw!");
-      // You can optionally reset the game or take other actions here
-      return true; // End the function since the
+      
+      return true; 
     }
 
     const newPosition = { ...position };
-    delete newPosition[sourceSquare]; // Remove piece from source square
-    newPosition[targetSquare] = piece; // Place piece on target square
-
-    setPosition(newPosition); // Update board position
-    setIsWhiteTurn(!isWhiteTurn); // Switch turns
-
+    delete newPosition[sourceSquare]; 
+    newPosition[targetSquare] = piece; 
+    setPosition(newPosition); 
+    setIsWhiteTurn(!isWhiteTurn); 
     console.log(`Piece ${piece} moved from ${sourceSquare} to ${targetSquare}`);
     return true;
   }
@@ -230,10 +225,10 @@ export default function Chessboard2() {
     <div className="Chessboard">
       <Chessboard
         id="Basicboard"
-        position={position} // Pass custom board position
-        onPieceDrop={onPieceDrop} // Handle piece drop
-        arePiecesDraggable={true} // Make pieces draggable
-        onPromotionPieceSelect={promotion} // Handle pawn promotion
+        position={position} 
+        onPieceDrop={onPieceDrop} 
+        arePiecesDraggable={true} 
+        onPromotionPieceSelect={promotion} 
       />
     </div>
   );
