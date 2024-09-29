@@ -2,6 +2,7 @@ import React,{ useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 import axios from "axios";
+import dotenv from 'dotenv';
 
 export default function RegisterPage() {
     const [username,setUsername] = useState("");
@@ -9,6 +10,10 @@ export default function RegisterPage() {
     const [password,setPassword] = useState("");
     const [salt,setSalt] = useState(Number);
     const [next, setNext] = useState(true);
+
+
+    const user = process.env.USERNAME;
+    const pass = process.env.PASSWORD;
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -97,8 +102,8 @@ export default function RegisterPage() {
                     try {
                         const { data: response } = await axios.get("http://localhost:8080/crud/getUser/" + username,{},{
                             auth : {
-                                "username" : "rares",
-                                "password" : "rares"
+                                "username" : user,
+                                "password" : pass
                             }
                         }
                         ); 
@@ -126,8 +131,8 @@ export default function RegisterPage() {
                     try {
                         const { data : response2 } = await axios.get("http://localhost:8080/crud/getUser/" + email,{},{
                             auth : {
-                                "username" : "rares",
-                                "password" : "rares"
+                                "username" : user,
+                                "password" : pass
                             }
                         }
                         );
@@ -160,8 +165,8 @@ export default function RegisterPage() {
                     "password" : hashedPassword
                    },{
                     auth : {
-                    "username" : "rares",
-                    "password" : "rares"
+                    "username" : user,
+                    "password" : pass
                 }}
             )
             const { code : responseCode3 } = response3;
