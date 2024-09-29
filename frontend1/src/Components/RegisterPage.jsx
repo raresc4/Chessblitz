@@ -2,7 +2,6 @@ import React,{ useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 import axios from "axios";
-import dotenv from 'dotenv';
 
 export default function RegisterPage() {
     const [username,setUsername] = useState("");
@@ -12,12 +11,13 @@ export default function RegisterPage() {
     const [next, setNext] = useState(true);
 
 
-    const user = process.env.USERNAME;
-    const pass = process.env.PASSWORD;
+    const user = process.env.REACT_APP_USERNAME;
+    const pass = process.env.REACT_APP_PASSWORD;
 
     const navigate = useNavigate();
     useEffect(() => {
         setSalt(bcrypt.genSaltSync(10));
+        console.log(user + '\n' + pass);
     },[]);
     return (
         <div class="font-[sans-serif] bg-white md:h-screen">
