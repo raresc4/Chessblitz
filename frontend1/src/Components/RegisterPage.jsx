@@ -17,7 +17,6 @@ export default function RegisterPage() {
     const navigate = useNavigate();
     useEffect(() => {
         setSalt(bcrypt.genSaltSync(10));
-        console.log(user + '\n' + pass);
     },[]);
     return (
         <div class="font-[sans-serif] bg-white md:h-screen">
@@ -83,6 +82,11 @@ export default function RegisterPage() {
                 }
                 if(username === ''){
                     alert("Username cannot be empty");
+                    setNext(false);
+                    return;
+                }
+                if(email.includes(' ')){
+                    alert("Email cannot contain spaces");
                     setNext(false);
                     return;
                 }
