@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "D:\\cod\\ChessBlitz\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\models\\chessusersdatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:models\\chessusersdatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\models\\getjwtkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:models\\getjwtkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\models\\chessusersdatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:models\\chessusersdatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,7 +66,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "Services\\JwtService.cs",
+              "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Services\\JwtService.cs",
+              "RelativeToolTip": "Services\\JwtService.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAACQAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T16:23:47.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetJwtKey.cs",
+              "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Models\\GetJwtKey.cs",
+              "RelativeDocumentMoniker": "Models\\GetJwtKey.cs",
+              "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Models\\GetJwtKey.cs",
+              "RelativeToolTip": "Models\\GetJwtKey.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T16:19:39.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ChessUsersDatabaseSettings.cs",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Models\\ChessUsersDatabaseSettings.cs",
               "RelativeDocumentMoniker": "Models\\ChessUsersDatabaseSettings.cs",
@@ -71,20 +105,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TestController.cs",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Controllers\\TestController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestController.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Controllers\\TestController.cs",
               "RelativeToolTip": "Controllers\\TestController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAbAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAABMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T21:43:40.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -97,13 +131,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "UsersService.cs",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Services\\UsersService.cs",
               "RelativeDocumentMoniker": "Services\\UsersService.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Services\\UsersService.cs",
               "RelativeToolTip": "Services\\UsersService.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABsAAAAPAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T19:53:43.617Z",
               "EditorCaption": ""
@@ -116,14 +150,14 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T19:52:06.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -136,13 +170,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-11-30T19:23:33.536Z",
               "EditorCaption": ""

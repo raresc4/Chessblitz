@@ -38,3 +38,8 @@ D:\cod\ChessBlitz\backend\obj\Debug\net8.0\backend.pdb
 D:\cod\ChessBlitz\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 D:\cod\ChessBlitz\backend\obj\Debug\net8.0\ref\backend.dll
 D:\cod\ChessBlitz\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\cod\ChessBlitz\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\cod\ChessBlitz\backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\cod\ChessBlitz\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\cod\ChessBlitz\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\cod\ChessBlitz\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

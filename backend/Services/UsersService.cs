@@ -6,17 +6,25 @@ using BCrypt.Net;
 namespace backend.Services
 {
     using BCrypt.Net;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Net.Http.Headers;
+    using System.Net.Http;
     public class UsersService
     {
         private readonly IMongoCollection<User> _usersCollection;
 
-        public UsersService(IOptions<ChessUsersDatabaseSettings> options)
+        private readonly JwtService _jwtService;
+
+        public UsersService(IOptions<ChessUsersDatabaseSettings> options, JwtService jwtService)
         {
             var mongoClient = new MongoClient(options.Value.ConnectionString);
 
             var mongoDatabase = mongoClient.GetDatabase(options.Value.DatabaseName);
 
             _usersCollection = mongoDatabase.GetCollection<User>(options.Value.ChessCollectionName);
+
+            _jwtService = jwtService;
         }
 
         public async Task CreateUserAsync(User newUser)
@@ -34,13 +42,25 @@ namespace backend.Services
             return foundUser;
         }
 
-        public async Task<Boolean> LoginUserAsync(User user)
+        public async Task<Boolean> LoginUserAsync(User user, HttpContext httpContext)
         {
             var userExists =  await VerifyUserAsync(user);
 
             if(userExists.Count > 0) {
                 var existentUser = userExists.First();
-                return BCrypt.Verify(user.Password, existentUser.Password);
+                if(BCrypt.Verify(user.Password, existentUser.Password))
+                {
+                    httpContext.Response.Cookies.Append("token", _jwtService.GenerateJwtToken(user.Name), new CookieOptions
+                    {
+                        Expires = DateTimeOffset.UtcNow.AddDays(30), 
+                        Path = "/", 
+                        HttpOnly = true, 
+                        Secure = true 
+                    });
+
+                    return true;
+                }
+                return false;
             }
             return false;
         }

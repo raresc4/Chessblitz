@@ -6,7 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<ChessUsersDatabaseSettings>(
     builder.Configuration.GetSection("ChessUsersDatabase"));
 
+builder.Services.Configure<GetJwtKey>(
+    builder.Configuration.GetSection("Jwt"));
+
 builder.Services.AddSingleton<UsersService>();
+builder.Services.AddSingleton<JwtService>();
 
 builder.Services.AddControllers().AddJsonOptions(
     options => options.JsonSerializerOptions.PropertyNamingPolicy = null

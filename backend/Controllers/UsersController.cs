@@ -10,7 +10,9 @@ namespace backend.Controllers
     {
         private readonly UsersService _usersService;
 
-        public UsersController(UsersService usersService) => _usersService = usersService;
+        public UsersController(UsersService usersService) {
+            _usersService = usersService;
+        } 
 
         [HttpGet]
         [Route("getUsers")]
@@ -28,11 +30,15 @@ namespace backend.Controllers
 
         [HttpPost]
         [Route("loginUser")]
-        public async Task<Boolean> LoginUser(User user)
+        public async Task<IActionResult> LoginUser(User user)
         {
-            var res = await _usersService.LoginUserAsync(user);
+            var res = await _usersService.LoginUserAsync(user, HttpContext);
 
-            return res;
+            if (res)
+            {
+                return Ok(new { message = "Login Successful"});
+            }
+            return Unauthorized(new { message = "Invalid Credentials" });
         }
     }
 }
