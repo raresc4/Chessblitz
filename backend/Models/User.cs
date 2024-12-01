@@ -17,9 +17,7 @@ namespace backend.Models
         [JsonPropertyName("Name")]
         public string Name { get; set; } = null!;
 
-        private string _password = null!;
-        public string Password { get => _password;
-            set => _password = BCrypt.HashPassword(value, BCrypt.GenerateSalt()); }
+        public string Password { get; set; } = null!;
 
         public string? Token { get; set; }
     }

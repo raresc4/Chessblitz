@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,6 +47,14 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
@@ -82,7 +90,7 @@
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAqwCgAAAAhAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T20:39:24.066Z",
               "EditorCaption": ""
@@ -95,7 +103,7 @@
               "RelativeDocumentMoniker": "Services\\UsersService.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Services\\UsersService.cs",
               "RelativeToolTip": "Services\\UsersService.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAACYAAAAuAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABsAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T19:53:43.617Z",
               "EditorCaption": ""
@@ -121,7 +129,7 @@
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAABUAAABPAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAiwBMAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T19:31:18.278Z",
               "EditorCaption": ""

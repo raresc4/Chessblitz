@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers
 {
     [ApiController]
-    [Route("api")]
+    [Route("api/users")]
     public class UsersController : ControllerBase
     {
         private readonly UsersService _usersService;
@@ -27,17 +27,7 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        [Route("verifyUser")]
-        public async Task<List<User>> VerifyUser(User user)
-        {
-            var res = await _usersService.VerifyUserAsync(user);
-
-            return res;
-        }
-
-        [HttpPost]
         [Route("loginUser")]
-
         public async Task<Boolean> LoginUser(User user)
         {
             var res = await _usersService.LoginUserAsync(user);
