@@ -56,7 +56,7 @@ export default function RegisterPage() {
                     alert("User registered successfully");
                     navigate("/login");
                   } else {
-                    alert("User registration failed");
+                    alert("User registration failed1");
                 }
                 }
               )
