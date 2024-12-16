@@ -23,9 +23,9 @@ namespace backend.Controllers
         [Route("registerUser")]
         public async Task<IActionResult> RegisterUser(User newUser)
         {
-            await _usersService.CreateUserAsync(newUser);
+            var res = await _usersService.CreateUserAsync(newUser);
 
-            return CreatedAtAction(nameof(Get), new { id =  newUser.Id }, newUser);
+            return Ok(res);
         }
 
         [HttpPost]

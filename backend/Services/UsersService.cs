@@ -27,12 +27,6 @@ namespace backend.Services
             _jwtService = jwtService;
         }
 
-        public async Task CreateUserAsync(User newUser)
-        {
-            newUser.Password = BCrypt.HashPassword(newUser.Password);
-            await _usersCollection.InsertOneAsync(newUser);
-        }
-
         private async Task<List<User>> VerifyUserAsync(User user)
         {
             var filter = Builders<User>.Filter.Eq("Name", user.Name);
@@ -40,6 +34,18 @@ namespace backend.Services
             var foundUser = await _usersCollection.Find(filter).ToListAsync();
 
             return foundUser;
+        }
+
+        public async Task<Boolean> CreateUserAsync(User newUser)
+        {
+            var userExists = await VerifyUserAsync(newUser);
+            if(userExists.Count  > 0)
+            {
+                return false;
+            }
+            newUser.Password = BCrypt.HashPassword(newUser.Password);
+            await _usersCollection.InsertOneAsync(newUser);
+            return true;
         }
 
         public async Task<Boolean> LoginUserAsync(User user, HttpContext httpContext)
