@@ -5,7 +5,6 @@ using System.Text.Json.Serialization;
 
 namespace backend.Models
 {
-    using BCrypt.Net;
 
     public class User
     {
@@ -13,8 +12,6 @@ namespace backend.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
-        [BsonElement("Name")]
-        [JsonPropertyName("Name")]
         public string Name { get; set; } = null!;
 
         public string Password { get; set; } = null!;

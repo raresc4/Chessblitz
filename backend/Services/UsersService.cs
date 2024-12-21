@@ -14,6 +14,8 @@ namespace backend.Services
     {
         private readonly IMongoCollection<User> _usersCollection;
 
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
         private readonly JwtService _jwtService;
 
         public UsersService(IOptions<ChessUsersDatabaseSettings> options, JwtService jwtService)
@@ -48,7 +50,7 @@ namespace backend.Services
             return true;
         }
 
-        public async Task<Boolean> LoginUserAsync(User user, HttpContext httpContext)
+        public async Task<int> LoginUserAsync(User user, HttpContext httpContext)
         {
             var userExists =  await VerifyUserAsync(user);
 
@@ -64,11 +66,23 @@ namespace backend.Services
                         Secure = true 
                     });
 
-                    return true;
+                    return 200;
                 }
+                return 400;
+            }
+            return 404;
+        }
+        
+        public Boolean DeleteCookie(string key)
+        {
+            try {
+                _httpContextAccessor.HttpContext.Response.Cookies.Delete(key);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
                 return false;
             }
-            return false;
+            return true;
         }
 
         public async Task<List<User>> GetUsersAsync() =>

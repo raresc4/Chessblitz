@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
+
+    using Microsoft.AspNetCore.Http;
+
     [ApiController]
     [Route("api/users")]
     public class UsersController : ControllerBase
@@ -34,11 +37,18 @@ namespace backend.Controllers
         {
             var res = await _usersService.LoginUserAsync(user, HttpContext);
 
-            if (res)
-            {
-                return Ok(new { message = "Login Successful"});
-            }
-            return Unauthorized(new { message = "Invalid Credentials" });
+            return Ok(res.ToString());
+        }
+
+        [HttpDelete]
+        [Route("deleteCookie")]
+        public IActionResult DeleteCookie(
+            [FromQuery(Name = "key")] string key
+            )
+        {
+            var res = _usersService.DeleteCookie(key);
+
+            return Ok(res);
         }
     }
 }

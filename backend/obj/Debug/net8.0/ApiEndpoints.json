@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "backend.Controllers.UsersController",
+    "Method": "DeleteCookie",
+    "RelativePath": "api/users/deleteCookie",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.UsersController",
     "Method": "Get",
     "RelativePath": "api/users/getUsers",
     "HttpMethod": "GET",
