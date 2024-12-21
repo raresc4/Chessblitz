@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
 import { enPassant } from "../Functions/EnPassant.ts";
+import { logoutUser } from "../Actions/user.ts";
 
 export default function Chessboard2() {
   const [game, setGame] = useState<any>(null);
@@ -239,6 +240,7 @@ export default function Chessboard2() {
   }
 
   return (
+    <>
     <div className="flex items-center justify-center h-screen" >
       <div className="w-[80vw] max-w-[400px] aspect-square border-2 border-black">
       <Chessboard
@@ -250,5 +252,11 @@ export default function Chessboard2() {
       />
       </div>
     </div>
+
+    <button onClick={async (e) => {
+      e.preventDefault();
+      logoutUser();
+    }}>Get FEN</button>
+    </>
   );
 }

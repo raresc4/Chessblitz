@@ -46,21 +46,24 @@ export default function RegisterPage() {
                 />
               </div>
   
-              <button type="submit" className="w-full p-2 bg-green-800 text-white"  onClick={() => {
-                if(user === "" || password === "") {
+              <button type="submit" className="w-full p-2 bg-green-800 text-white"  onClick={async (e) => {
+                e.preventDefault(); 
+                if (user === "" || password === "") {
                   alert("Username or password cannot be empty");
                   return;
                 }
-                registerUser(user, password).then((data: boolean) => {
-                  if(data) {
-                    alert("User registered successfully");
-                    navigate("/login");
-                  } else {
-                    alert("User registration failed1");
-                }
-                }
-              )
-              }}>
+                try {
+                    registerUser(user, password).then((data) => {
+                    if (data === true) {
+                      alert("User registered successfully");
+                      navigate("/login");
+                    } else {
+                        alert("User registration failed : user already exists");
+                    }});
+                      } catch (error) {
+                        alert("An error occurred: " + error.message);
+                      } 
+                      }}>
                 Register
               </button>
             </form>

@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\cod\\ChessBlitz\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|d:\\cod\\chessblitz\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\models\\chessusersdatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:models\\chessusersdatabasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|D:\\cod\\ChessBlitz\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{06D1997E-1D5C-41F7-9551-5D6AE5E99E16}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,40 +47,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T19:10:16.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChessUsersDatabaseSettings.cs",
-              "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Models\\ChessUsersDatabaseSettings.cs",
-              "RelativeDocumentMoniker": "Models\\ChessUsersDatabaseSettings.cs",
-              "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Models\\ChessUsersDatabaseSettings.cs",
-              "RelativeToolTip": "Models\\ChessUsersDatabaseSettings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T11:54:02.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "UsersService.cs",
               "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Services\\UsersService.cs",
               "RelativeDocumentMoniker": "Services\\UsersService.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Services\\UsersService.cs",
               "RelativeToolTip": "Services\\UsersService.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAAC8AAAAYAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAAFEAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T19:53:43.617Z",
+              "WhenOpened": "2024-12-21T14:12:58.412Z",
               "EditorCaption": ""
             },
             {
@@ -99,9 +65,22 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAALAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAACQAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T19:52:06.391Z",
+              "WhenOpened": "2024-12-17T19:28:40.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAADMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T19:10:16.488Z",
               "EditorCaption": ""
             },
             {
@@ -112,22 +91,9 @@
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "D:\\cod\\ChessBlitz\\backend\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAwAAAAvAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T19:31:18.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\cod\\ChessBlitz\\backend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\cod\\ChessBlitz\\backend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-30T19:23:33.536Z",
               "EditorCaption": ""
             }
           ]

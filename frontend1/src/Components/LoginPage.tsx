@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../Actions/user.ts";
 
 export default function LoginPage() {
   const [user, setUser] = React.useState<string>("");
@@ -44,7 +45,38 @@ export default function LoginPage() {
               />
             </div>
 
-            <button type="submit" className="w-full p-2 bg-green-800 text-white" >
+            <button type="submit" className="w-full p-2 bg-green-800 text-white" onClick={async (e) => {
+              e.preventDefault();
+              if (user === "" || password === "") {
+                alert("Username or password cannot be empty");
+                return;
+              }
+
+              try {
+                loginUser(user, password).then((data) => {
+                  switch (data) {
+                    case "Error":
+                      alert("Internal server error");
+                      break;
+                    case "200":
+                      alert("Login successful");
+                      navigate("/");
+                      break;
+                    case "400" : 
+                      alert("Invalid username or password");
+                      break;
+                    case "404" : 
+                      alert("User not found");
+                      break;
+                    default:
+                      alert("Unknown error");
+                      break;
+                  } 
+                });
+              } catch (error) {
+                alert("An error occurred: " + error.message);
+              }
+            }}>
               Login
             </button>
           </form>

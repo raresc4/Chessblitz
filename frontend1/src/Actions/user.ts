@@ -1,14 +1,74 @@
 import { User } from '../Types/User';
 
+const API_URL = 'http://localhost:5276/api/users';
+
 export const registerUser = async (name: string, password: string): Promise<boolean> => {
-        const response = await fetch(`https://localhost:7003/api/users/registerUser`, {
+    try {
+        const response = await fetch(`${API_URL}/registerUser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ Name: name, Password: password })
         });
+
+        if(!response.ok) {
+            console.log("Error1 : ", response.statusText);
+            return false;
+        }
+
         const data = await response.json();
-        console.log("Data : ", data);
+        
         return data;
+    } catch (error) {
+        console.log("Error : ", error.message);
+        return false;
+    }
+}
+
+export const loginUser = async (name: string, password: string): Promise<String> => {
+    try {
+        const response = await fetch(`${API_URL}/loginUser`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ Name: name, Password: password })
+        });
+
+        if(!response.ok) {
+            console.log("Error1 : ", response.statusText);
+            return "Error";
+        }
+
+        const data = await response.json();
+        console.log("Data : ", typeof data);
+        return String(data);
+    } catch (error) {
+        console.log("Error : ", error.message);
+        return "500";
+    }
+}
+
+export const logoutUser = async (): Promise<boolean> => {
+    try {
+        const response = await fetch(`${API_URL}/deleteCookie`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if(!response.ok) {
+            console.log("Error1 : ", response.statusText);
+            return false;
+        }
+
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        console.log("Error : ", error.message);
+        return false;
+    }
 }
