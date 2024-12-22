@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers
 {
 
-    using Microsoft.AspNetCore.Http;
-
     [ApiController]
     [Route("api/users")]
     public class UsersController : ControllerBase
@@ -35,7 +33,7 @@ namespace backend.Controllers
         [Route("loginUser")]
         public async Task<IActionResult> LoginUser(User user)
         {
-            var res = await _usersService.LoginUserAsync(user, HttpContext);
+            var res = await _usersService.LoginUserAsync(user);
 
             return Ok(res.ToString());
         }

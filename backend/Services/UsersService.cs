@@ -14,11 +14,11 @@ namespace backend.Services
     {
         private readonly IMongoCollection<User> _usersCollection;
 
-        private readonly IHttpContextAccessor _httpContextAccessor;
-
         private readonly JwtService _jwtService;
 
-        public UsersService(IOptions<ChessUsersDatabaseSettings> options, JwtService jwtService)
+        private readonly IHttpContextAccessor _httpcontextAccessor;
+
+        public UsersService(IOptions<ChessUsersDatabaseSettings> options, JwtService jwtService, IHttpContextAccessor httpcontextAccessor)
         {
             var mongoClient = new MongoClient(options.Value.ConnectionString);
 
@@ -27,6 +27,8 @@ namespace backend.Services
             _usersCollection = mongoDatabase.GetCollection<User>(options.Value.ChessCollectionName);
 
             _jwtService = jwtService;
+
+            _httpcontextAccessor = httpcontextAccessor;
         }
 
         private async Task<List<User>> VerifyUserAsync(User user)
@@ -50,9 +52,17 @@ namespace backend.Services
             return true;
         }
 
-        public async Task<int> LoginUserAsync(User user, HttpContext httpContext)
+
+        public async Task<int> LoginUserAsync(User user)
         {
             var userExists =  await VerifyUserAsync(user);
+
+            if (_httpcontextAccessor.HttpContext == null)
+            {
+                throw new InvalidOperationException("HttpContext is not available. Ensure this method is called within an HTTP request.");
+            }
+
+            var httpContext = _httpcontextAccessor.HttpContext;
 
             if(userExists.Count > 0) {
                 var existentUser = userExists.First();
@@ -62,8 +72,8 @@ namespace backend.Services
                     {
                         Expires = DateTimeOffset.UtcNow.AddDays(30), 
                         Path = "/", 
-                        HttpOnly = true, 
-                        Secure = true 
+                        HttpOnly = true,
+                        Secure = true,
                     });
 
                     return 200;
@@ -75,13 +85,18 @@ namespace backend.Services
         
         public Boolean DeleteCookie(string key)
         {
-            try {
-                _httpContextAccessor.HttpContext.Response.Cookies.Delete(key);
+            if(_httpcontextAccessor.HttpContext == null)
+            {
+                throw new Exception("The HttpContext is null");
+            }
+
+           try {
+                _httpcontextAccessor.HttpContext.Response.Cookies.Delete(key);
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return false;
-            }
+            } 
             return true;
         }
 
