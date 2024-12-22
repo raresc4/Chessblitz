@@ -27,12 +27,16 @@ export const registerUser = async (name: string, password: string): Promise<bool
 }
 
 export const loginUser = async (name: string, password: string): Promise<String> => {
+
+    
+
     try {
         const response = await fetch(`${API_URL}/loginUser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify({ Name: name, Password: password })
         });
 
@@ -42,7 +46,9 @@ export const loginUser = async (name: string, password: string): Promise<String>
         }
 
         const data = await response.json();
-        console.log("Data : ", typeof data);
+
+        console.log("Data : ", data);
+
         return String(data);
     } catch (error) {
         console.log("Error : ", error.message);
@@ -51,12 +57,18 @@ export const loginUser = async (name: string, password: string): Promise<String>
 }
 
 export const logoutUser = async (): Promise<boolean> => {
+
+    const url = new URL(`${API_URL}/deleteCookie`);
+
+    url.searchParams.append('key', 'token')
+
     try {
-        const response = await fetch(`${API_URL}/deleteCookie`, {
+        const response = await fetch(url , {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            credentials: 'include'
         });
 
         if(!response.ok) {
