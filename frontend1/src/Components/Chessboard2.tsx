@@ -252,11 +252,6 @@ export default function Chessboard2() {
       />
       </div>
     </div>
-
-    <button onClick={async (e) => {
-      e.preventDefault();
-      logoutUser();
-    }}>Get FEN</button>
     </>
   );
 }

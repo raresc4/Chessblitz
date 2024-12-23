@@ -48,5 +48,19 @@ namespace backend.Controllers
 
             return Ok(res);
         }
+
+        [HttpGet]
+        [Route("getLoggedUsername")]
+        public IActionResult GetLoggedUsername()
+        {
+            var res = _usersService.GetLoggedUsername();
+
+            if(res == null)
+            {
+                return Ok(false);
+            }
+
+            return Ok(res);
+        }
     }
 }

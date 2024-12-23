@@ -84,3 +84,28 @@ export const logoutUser = async (): Promise<boolean> => {
         return false;
     }
 }
+
+export const getLoggedUsername = async (): Promise<string | boolean> => {
+    
+    try {
+        const response = await fetch(`${API_URL}/getLoggedUsername`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+
+        if(!response.ok) {
+            console.log("Error1 : ", response.statusText);
+            return false;
+        }
+
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        console.log("Error : ", error.message);
+        return false;
+    }
+}

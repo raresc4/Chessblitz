@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "backend.Controllers.UsersController",
+    "Method": "GetLoggedUsername",
+    "RelativePath": "api/users/getLoggedUsername",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.UsersController",
     "Method": "Get",
     "RelativePath": "api/users/getUsers",
     "HttpMethod": "GET",

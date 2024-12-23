@@ -9,7 +9,10 @@ namespace backend.Services
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Net.Http.Headers;
+    using System.IdentityModel.Tokens.Jwt;
     using System.Net.Http;
+    using System.Security.Claims;
+
     public class UsersService
     {
         private readonly IMongoCollection<User> _usersCollection;
@@ -98,6 +101,36 @@ namespace backend.Services
                 return false;
             } 
             return true;
+        }
+
+        public String GetLoggedUsername()
+        {
+            if(_httpcontextAccessor.HttpContext == null)
+            {
+                throw new Exception("The HttpContext is null");
+            }
+
+            try
+            {
+                var jwt = _httpcontextAccessor.HttpContext.Request.Cookies["token"];
+                var handler = new JwtSecurityTokenHandler();
+                var token = handler.ReadJwtToken(jwt);
+
+                var username = token.Claims
+                                        .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)
+                                         ?.Value;
+
+                if (string.IsNullOrEmpty(username))
+                {
+                    throw new Exception("Username not found in token claims.");
+                }
+
+                return username;
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
         }
 
         public async Task<List<User>> GetUsersAsync() =>

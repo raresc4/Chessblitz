@@ -31,7 +31,7 @@ namespace backend.Services
                     expires: DateTime.UtcNow.AddDays(30),
                     signingCredentials: creds);
 
-                return jwtToken.EncodedPayload;
+                return new JwtSecurityTokenHandler().WriteToken(jwtToken);
             } catch (Exception ex)
             {
                 return ex.Message;
