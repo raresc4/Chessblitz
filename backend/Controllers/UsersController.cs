@@ -60,7 +60,7 @@ namespace backend.Controllers
                 return Ok(false);
             }
 
-            return Ok(res);
+            return Ok(new { res });
         }
     }
 }

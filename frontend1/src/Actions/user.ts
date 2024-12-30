@@ -102,7 +102,6 @@ export const getLoggedUsername = async (): Promise<string | boolean> => {
         }
 
         const data = await response.json();
-
         return data;
     } catch (error) {
         console.log("Error : ", error.message);

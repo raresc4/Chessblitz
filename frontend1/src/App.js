@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Chessboard2 from "./Components/Chessboard2.tsx";
-import RegisterPage from "./Components/RegisterPage.tsx";
-import LoginPage from "./Components/LoginPage.tsx";
-import ProfilePage from "./Components/ProfilePage.tsx";
+import Chessboard2 from "./Pages/Chessboard2.tsx";
+import RegisterPage from "./Pages/RegisterPage.tsx";
+import LoginPage from "./Pages/LoginPage.tsx";
+import ProfilePage from "./Pages/ProfilePage.tsx";
 
 export default function App() {
   return (
