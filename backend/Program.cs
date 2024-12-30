@@ -1,5 +1,6 @@
 using backend.Models;
 using backend.Services;
+using backend.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddCors(options =>
               .AllowCredentials(); 
         });
 });
+
+builder.Services.AddSignalR();
 
 builder.Services.Configure<ChessUsersDatabaseSettings>(
     builder.Configuration.GetSection("ChessUsersDatabase"));
@@ -57,5 +60,7 @@ app.UseAuthorization();
 app.UseWebSockets();
 
 app.MapControllers();
+
+app.MapHub<ChessHub>("/chesshub");
 
 app.Run();

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { getLoggedUsername } from "../Actions/user.ts";
 import Header from "../Components/Header.tsx";
+import * as signalR from "@microsoft/signalr";
 
 export default function ProfilePage() {
 
@@ -18,6 +19,20 @@ export default function ProfilePage() {
                 navigate('/login');
             }
         });
+
+        const connection = new signalR.HubConnectionBuilder()
+    .withUrl("http://localhost:5276/chesshub")
+    .build();
+
+connection.on("ReceiveMessage", (user, message) => {
+    console.log(`${user}: ${message}`);
+});
+
+connection.start().catch(err => console.error(err));
+
+// To send a message
+connection.invoke("SendMessage", "User1", "Hello, SignalR!")
+    .catch(err => console.error(err));
     }, []);
 
     return username ? (
