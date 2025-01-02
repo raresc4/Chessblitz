@@ -1,9 +1,9 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { HeaderProps } from "../Types/HeaderProps.ts";
 import { logoutUser } from "../Actions/user.ts";
 import { useNavigate } from "react-router-dom";
 
-export default function Header(props: HeaderProps) {
+export default function Header(props: PropsWithChildren<HeaderProps>) {
 
     const [username, setUsername] = React.useState<string | null>("");
 
@@ -16,16 +16,9 @@ export default function Header(props: HeaderProps) {
 
     return (
         <>
-            <header className='flex shadow-lg py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+            <header className='flex shadow-lg py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50'
+            style={{ backgroundColor: "#2C874E" }}>
       <div className='flex flex-wrap items-center justify-between gap-4 w-full'>
-        <a href="javascript:void(0)"
-          className="lg:absolute max-lg:left-10 lg:top-2/4 lg:left-2/4 lg:-translate-x-1/2 lg:-translate-y-1/2 max-sm:hidden"><img
-            src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
-        </a>
-        <a href="javascript:void(0)"
-          className="hidden max-sm:block"><img
-            src="https://readymadeui.com/readymadeui-short.svg" alt="logo" className='w-9' />
-        </a>
 
         <div id="collapseMenu"
           className='max-lg:hidden lg:!block max-lg:w-full max-lg:fixed max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
@@ -47,20 +40,29 @@ export default function Header(props: HeaderProps) {
               </a>
             </li>
             <li className='max-lg:border-b max-lg:py-3 px-3'>
-              <a href='javascript:void(0)'
-                className='hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]'>Home</a>
+              <a
+                className='text-[#F5F5F5] block font-semibold text-[15px]'>Home</a>
             </li>
-            <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-              className='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Team</a>
+            <li className='max-lg:border-b max-lg:py-3 px-3'><a 
+              className='text-[#F5F5F5] block font-semibold text-[15px]'>Team</a>
             </li>
-            <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-              className='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Feature</a>
-            </li>
-            <li className='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
-              className='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Blog</a>
+            <li className='max-lg:border-b max-lg:py-3 px-3'><a
+              className='text-[#F5F5F5] block font-semibold text-[15px]'>Feature</a>
             </li>
           </ul>
+
+          
         </div>
+
+
+        {/* Title */}
+    <div
+      className="text-white text-2xl font-bold 
+        lg:absolute lg:left-0 lg:right-0 lg:flex lg:justify-center lg:items-center 
+        max-lg:flex max-lg:justify-start"
+    >
+      <h1>ChessBlitz</h1>
+    </div>
 
         <div className='flex items-center ml-auto space-x-6'>
           <button

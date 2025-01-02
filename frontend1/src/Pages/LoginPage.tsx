@@ -61,7 +61,7 @@ export default function LoginPage() {
                       alert("Internal server error");
                       break;
                     case "200":
-                      navigate("/profile");
+                      navigate("/home");
                       break;
                     case "400" : 
                       alert("Invalid username or password");
