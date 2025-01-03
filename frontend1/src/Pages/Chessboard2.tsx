@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
 import { enPassant } from "../Functions/EnPassant.ts";
-import { logoutUser } from "../Actions/user.ts";
+import { getLoggedUsername } from "../Actions/user.ts";
+import { useNavigate } from "react-router-dom";
 
 export default function Chessboard2() {
   const [game, setGame] = useState<any>(null);
+  const [username, setUsername] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+
   const [position, setPosition] = useState<{ [key: string]: string }>({
     a1: "wR",
     a2: "wP",
@@ -50,6 +55,14 @@ export default function Chessboard2() {
 
   useEffect(() => {
     setGame(new Chess());
+    getLoggedUsername().then((data) => {
+      if (data !== false) {
+        setUsername(data["res"]);
+      } else {
+        setUsername(null);
+        navigate("/login");
+      }
+    })
   }, []);
 
   function promotion(piece: any, sourceSquare: any, targetSquare: any) {
