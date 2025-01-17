@@ -29,7 +29,7 @@ export default function ProfilePage() {
             <div className="flex h-screen items-center justify-center" style={{ backgroundColor: "#50C878" }}>
             <button onClick={() => {
               sendMessage(username, "Test");               
-            }}>Test</button>
+            }}>Test 1</button>
             </div>
         </div>
     ) : (
